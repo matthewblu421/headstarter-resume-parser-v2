@@ -9,10 +9,10 @@ const app = express();
 
 const fileStorageEngine = multer.diskStorage({
 	destination: (req, file, cb) => {
-		cb(null, './resumes');
+		cb(null, './src/resumes');
 	},
 	filename: (req, file, cb) => {
-		cb(null, Date.now() + '--' + file.originalname);
+		cb(null, file.originalname);
 	}
 });
 
